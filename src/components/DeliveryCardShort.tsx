@@ -23,19 +23,7 @@ export default function DeliveryCardShort({ delivery }: Props) {
                     <DndIcon />
                 </header>
 
-                <h2 className={styles.name}>
-                    {fullName}
-                    <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
-                        <ellipse cx="5" cy="4.4" rx="5" ry="4.4" fill="currentColor" />
-                        <path d="M3.9 8.2 4.3 9.9 6.3 8.3z" fill="currentColor" />
-                        <path
-                            d="M3 3.4h4.3M3 5.6h2.7"
-                            stroke="#fff"
-                            strokeWidth="1.1"
-                            strokeLinecap="round"
-                        />
-                    </svg>
-                </h2>
+                <h2 className={styles.name}>{fullName}</h2>
 
                 <div className={styles.meta}>
                     <div className={styles.cardRow}>
@@ -85,10 +73,3 @@ export default function DeliveryCardShort({ delivery }: Props) {
         </div>
     );
 }
-
-// Долги
-// 1 - Реализация тегов как в проекте
-// 2 - У карточки не всгда есть, это может быть и номер телефона 7(9..)...24-22 - номер не показываем полностью
-// 3 - Сделать кнопку 'Позвонить' - пока без механики
-// 4 - Сделать кнопку 'SMS' - пока без механики
-// 5 - Сделать кнопку 'Заметки' - пока без механики
