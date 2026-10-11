@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { DndSortableContext } from "./DndSortableContext";
+import styles from "./DndIcon.module.css";
 
 export default function DndIcon() {
     const sortableContext = useContext(DndSortableContext);
@@ -7,7 +8,7 @@ export default function DndIcon() {
     return (
         <button
             type="button"
-            className="drag-handle"
+            className={styles.handle}
             {...(sortableContext?.attributes || {})} // ... раскладывает объект на отдельные пропсы: role, tabIndex, aria-*
             {...(sortableContext?.listeners || {})} // onMouseDown, onTouchStart — их слушают сенсоры; || {} — если контекста нет (null)
             onContextMenu={(event) => event.preventDefault()} // долгое нажатие на телефоне (и правый клик) не открывает системное меню

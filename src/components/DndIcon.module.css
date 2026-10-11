@@ -1,0 +1,9 @@
+.handle {
+    flex-shrink: 0;
+    padding: 4px;
+    border: none;
+    background: none;
+    line-height: 1;
+    cursor: grab;
+    user-select: none; /* долгое нажатие не выделяет текст */
+}

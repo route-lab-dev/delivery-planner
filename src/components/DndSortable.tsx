@@ -23,7 +23,6 @@ export const DndSortable = ({ id, disabled, children }: Props) => {
         // Едет копия в оверлее, а оригинал — полупрозрачный «призрак»: держит место нужной высоты в списке.
         // zIndex не нужен: сам оригинал никуда не едет поверх соседей, едет копия.
         opacity: isDragging ? 0.3 : undefined,
-        position: "relative", // точка отсчёта для ручки ⠿ (она position: absolute)
     };
 
     const contextValue = useMemo(() => ({ attributes, listeners }), [attributes, listeners]);

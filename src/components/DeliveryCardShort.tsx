@@ -76,6 +76,7 @@ export default function DeliveryCardShort({ delivery }: Props) {
                     <DeliveryButtonCall />
                     <DeliveryButtonSms />
                     <DeliveryButtonNote />
+
                     {delivery.documentId && (
                         <PrintDocumentsButton documentId={delivery.documentId} />
                     )}
