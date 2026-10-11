@@ -1,16 +1,3 @@
-.drag-handle {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    padding: 4px;
-    border: none;
-    background: none;
-    font-size: 20px;
-    line-height: 1;
-    cursor: grab;
-    user-select: none; /* долгое нажатие не выделяет текст */
-}
-
 article h2 {
     margin: 0 0 4px;
     font-size: 18px;
