@@ -1,0 +1,30 @@
+:root {
+    --color-text: #222;
+    --color-title: #1c2340;
+    --color-muted: #888;
+    --color-border: #ccc;
+    --color-page: #f2f3f5;
+    --color-surface: #fff;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* * — «все элементы» */
+}
+
+body {
+    margin: 0;
+    color: var(--color-text);
+    background: var(--color-page);
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+}
+
+button {
+    font: inherit; /* кнопки берут шрифт у родителя */
+}
