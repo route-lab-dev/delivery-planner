@@ -9,20 +9,20 @@
 }
 
 .dark {
-    color: #fff;
-    background: #222;
+    color: var(--color-surface);
+    background: var(--color-text);
 }
 
 .outline {
-    color: #222;
+    color: var(--color-text);
     background: transparent;
-    border-color: #222;
+    border-color: var(--color-text);
 }
 
 .light {
     color: #999;
     background: transparent;
-    border-color: #ccc;
+    border-color: var(--color-border);
 }
 
 .button:disabled {

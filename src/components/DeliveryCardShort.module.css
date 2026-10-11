@@ -3,10 +3,10 @@
     flex-direction: column; /* блоки карточки — столбиком */
     gap: 12px; /* зазор между блоками вместо margin у каждого */
 
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     padding: 18px 16px 16px;
     border-radius: 6px;
-    background: #fff;
+    background: var(--color-surface);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
     cursor: pointer; /* карточку открывают кликом, тащат — за ручку */
 }
@@ -19,9 +19,10 @@
 }
 
 .name {
+    overflow-wrap: anywhere;
     font-size: 20px;
     font-weight: 700;
-    color: #1c2340;
+    color: var(--color-title);
     line-height: 24px;
     margin: 0;
 }
@@ -45,18 +46,19 @@
     width: 20px;
     height: 20px;
     margin: 0 2px;
-    color: #222;
+    color: var(--color-text);
 }
 
 .address {
-    color: #222;
+    color: var(--color-text);
+    overflow-wrap: anywhere;
     text-decoration: underline; /* у span подчёркивания по умолчанию нет */
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
 }
 
 .time {
-    color: #1c2340;
+    color: var(--color-title);
 }
 
 .metro {
@@ -64,7 +66,7 @@
     margin-top: 4px;
     font-size: 14px;
     line-height: 18px;
-    color: #888;
+    color: var(--color-muted);
 }
 
 .actions {
