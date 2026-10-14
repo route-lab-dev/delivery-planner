@@ -9,12 +9,14 @@ import { DndSortable } from "./DndSortable";
 import DndDragOverlay from "./DndDragOverlay";
 import { mergeVisibleOrder, pinUrgentDeliveries, saveDeliveryPosition } from "../utils/order";
 import { getStartDeliverys, setLocalUuids } from "../utils/storage";
+import DeliveryCardFull from "./DeliveryCardFull";
 
 export default function DeliveryList() {
     // Функцией, а не значением: закрепление срочных посчитается один раз, при первой отрисовке
     const [deliveries, setDeliveries] = useState<Delivery[]>(() => getStartDeliverys(meetings)); // ПОЛНЫЙ список
     const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null); // UniqueIdentifier = string | number
     const [hideCompleted, setHideCompleted] = useState(false);
+    const [toggleCard, setToggleCard] = useState(true); // переключаетель с длинного на кородкий каждого кард
     // Пока «сервер» не ответил — перетаскивать нельзя: иначе откат упавшего запроса сотрёт следующее перетаскивание
     const [isSaving, setIsSaving] = useState(false);
 
@@ -94,10 +96,19 @@ export default function DeliveryList() {
                 onDragCancel={onDragCancel}
             >
                 <SortableContext items={deliveriesUuids} strategy={verticalListSortingStrategy}>
-                    <ul>
+                    <ul
+                        onClick={(e) => {
+                            if ((e.target as HTMLElement).closest("button")) return; //это не дает всплывать кликам по кнопкам и переключать карточки этим трем кнопкам, кустарно ну а хули делать 8((
+                            setToggleCard((prev) => !prev);
+                        }}
+                    >
                         {visibleDeliveries.map((delivery) => (
                             <DndSortable key={delivery.uuid} id={delivery.uuid} disabled={isSaving}>
-                                <DeliveryCardShort delivery={delivery} />
+                                {toggleCard ? (
+                                    <DeliveryCardShort delivery={delivery} />
+                                ) : (
+                                    <DeliveryCardFull delivery={delivery} />
+                                )}
                             </DndSortable>
                         ))}
                     </ul>
