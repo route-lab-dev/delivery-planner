@@ -1,21 +1,27 @@
 .card {
-    display: flex;
-    flex-direction: column; /* блоки карточки — столбиком */
-    gap: 12px; /* зазор между блоками вместо margin у каждого */
-
-    border: 1px solid var(--color-border);
-    padding: 18px 16px 16px;
-    border-radius: 6px;
-    background: var(--color-surface);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgb(15 23 42 / 6%);
+    color: #1f2937;
     cursor: pointer; /* карточку открывают кликом, тащат — за ручку */
+    transition:
+        box-shadow 180ms ease,
+        border-color 180ms ease;
+}
+.card:hover {
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 4px 14px rgb(15 23 42 / 10%);
 }
 
 .header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: 12px;
 }
 
 .name {
@@ -35,12 +41,11 @@
 
 .cardRow {
     display: flex;
-    align-items: flex-start;
-    gap: 8px; /* иконка ↔ текст */
+    align-items: center;
+    gap: 12px; /* иконка ↔ текст */
     font-size: 16px;
     line-height: 20px;
 }
-
 .icon {
     flex-shrink: 0;
     width: 20px;
@@ -48,7 +53,10 @@
     margin: 0 2px;
     color: var(--color-text);
 }
-
+.addressInfo {
+    display: flex;
+    flex-direction: column;
+}
 .address {
     color: var(--color-text);
     overflow-wrap: anywhere;
