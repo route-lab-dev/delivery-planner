@@ -25,6 +25,12 @@ body {
         sans-serif;
 }
 
+main {
+    padding: 6px;
+    margin-inline: auto;
+    max-width: 480px;
+}
+
 button {
     font: inherit; /* кнопки берут шрифт у родителя */
 }
