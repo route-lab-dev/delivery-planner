@@ -1,7 +1,9 @@
 .card {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    box-sizing: border-box;
     padding: 16px;
+    gap: 12px;
     background-color: #fff;
     border: 1px solid #e5e7eb;
     border-radius: 12px;
@@ -34,6 +36,8 @@
 }
 
 .meta {
+    align-items: flex-start;
+    gap: 8px;
     display: flex;
     flex-direction: column;
     gap: 20px; /* между строками */
