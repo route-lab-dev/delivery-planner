@@ -9,6 +9,7 @@ import { DndSortable } from "./DndSortable";
 import DndDragOverlay from "./DndDragOverlay";
 import { mergeVisibleOrder, pinUrgentDeliveries, saveDeliveryPosition } from "../utils/order";
 import { getStartDeliverys, setLocalUuids } from "../utils/storage";
+import DeliveryCardFull from "./DeliveryCardFull";
 import styles from "./DeliveryList.module.css";
 
 export default function DeliveryList() {
@@ -16,6 +17,7 @@ export default function DeliveryList() {
     const [deliveries, setDeliveries] = useState<Delivery[]>(() => getStartDeliverys(meetings)); // ПОЛНЫЙ список
     const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null); // UniqueIdentifier = string | number
     const [hideCompleted, setHideCompleted] = useState(false);
+    const [toggleCard, setToggleCard] = useState<Delivery["uuid"] | null>(null); // переключаетель с длинного на кородкий каждого кард
     // Пока «сервер» не ответил — перетаскивать нельзя: иначе откат упавшего запроса сотрёт следующее перетаскивание
     const [isSaving, setIsSaving] = useState(false);
 
@@ -98,7 +100,20 @@ export default function DeliveryList() {
                     <ul className={styles.list}>
                         {visibleDeliveries.map((delivery) => (
                             <DndSortable key={delivery.uuid} id={delivery.uuid} disabled={isSaving}>
-                                <DeliveryCardShort delivery={delivery} />
+                                <div
+                                    onClick={(e) => {
+                                        if ((e.target as HTMLElement).closest("button")) return; //это не дает всплывать кликам по кнопкам и переключать карточки этим трем кнопкам, кустарно ну а хули делать 8((
+                                        setToggleCard((prev) =>
+                                            prev === delivery.uuid ? null : delivery.uuid,
+                                        );
+                                    }}
+                                >
+                                    {toggleCard === delivery.uuid ? (
+                                        <DeliveryCardFull delivery={delivery} />
+                                    ) : (
+                                        <DeliveryCardShort delivery={delivery} />
+                                    )}
+                                </div>
                             </DndSortable>
                         ))}
                     </ul>
