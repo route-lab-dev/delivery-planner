@@ -101,8 +101,7 @@ export default function DeliveryList() {
                         {visibleDeliveries.map((delivery) => (
                             <DndSortable key={delivery.uuid} id={delivery.uuid} disabled={isSaving}>
                                 <div
-                                    onClick={(e) => {
-                                        if ((e.target as HTMLElement).closest("button")) return; //это не дает всплывать кликам по кнопкам и переключать карточки этим трем кнопкам, кустарно ну а хули делать 8((
+                                    onClick={() => {
                                         setToggleCard((prev) =>
                                             prev === delivery.uuid ? null : delivery.uuid,
                                         );
