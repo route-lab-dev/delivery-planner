@@ -79,8 +79,6 @@ export default function DeliveryList() {
 
     return (
         <>
-            <p>Порядок: {deliveries.map(({ lastName }) => lastName).join(", ")}</p>
-
             <label>
                 <input
                     type="checkbox"
