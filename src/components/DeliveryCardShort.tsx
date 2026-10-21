@@ -1,23 +1,17 @@
 import type { Delivery } from "../types";
-import PrintDocumentsButton from "./PrintDocumentsButton";
-import DeliveryButtonCall from "./DeliveryButtonCall";
-import DeliveryButtonNote from "./DeliveryButtonNote";
-import DeliveryButtonSms from "./DeliveryButtonSms";
 import DndIcon from "./DndIcon";
 import styles from "./DeliveryCardShort.module.css";
 import DeliveryTags from "./DeliveryTags";
+import type { ReactNode } from "react";
 
-type Props = { delivery: Delivery };
+type Props = { delivery: Delivery; actions?: ReactNode };
 
-export default function DeliveryCardShort({ delivery }: Props) {
+export default function DeliveryCardShort({ delivery, actions }: Props) {
     const fullName = `${delivery.lastName} ${delivery.firstName} ${delivery.middleName}`;
 
     return (
         <div>
-            <article
-                className={styles.card}
-                onClick={() => console.log(`открыта карточка ${delivery.lastName}`)}
-            >
+            <article className={styles.card}>
                 <header className={styles.header}>
                     <DeliveryTags urgency={delivery.urgency} />
                     <DndIcon />
@@ -60,15 +54,7 @@ export default function DeliveryCardShort({ delivery }: Props) {
                     </div>
                 </div>
 
-                <div className={styles.actions}>
-                    <DeliveryButtonCall />
-                    <DeliveryButtonSms />
-                    <DeliveryButtonNote />
-
-                    {delivery.documentId && (
-                        <PrintDocumentsButton documentId={delivery.documentId} />
-                    )}
-                </div>
+                {actions ?? <div className={styles.actions}>{actions}</div>}
             </article>
         </div>
     );
