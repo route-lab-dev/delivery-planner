@@ -19,7 +19,7 @@ export default function DeliveryList() {
     const [deliveries, setDeliveries] = useState<Delivery[]>(() => getStartDeliverys(meetings)); // ПОЛНЫЙ список
     const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null); // UniqueIdentifier = string | number
     const [hideCompleted, setHideCompleted] = useState(false);
-    const [toggleCard, setToggleCard] = useState<Delivery | null>(null); // переключаетель с длинного на кородкий каждого кард
+    const [toggleCard, setToggleCard] = useState<Delivery["uuid"] | null>(null); // переключаетель с длинного на кородкий каждого кард
     // Пока «сервер» не ответил — перетаскивать нельзя: иначе откат упавшего запроса сотрёт следующее перетаскивание
     const [isSaving, setIsSaving] = useState(false);
 
@@ -90,18 +90,6 @@ export default function DeliveryList() {
                 Скрыть завершённые
             </label>
 
-            {toggleCard && (
-                <DeliveryCardFull
-                    delivery={toggleCard}
-                    actions={
-                        <>
-                            <DeliveryAction delivery={toggleCard} />
-                            <CourierNote />
-                        </>
-                    }
-                />
-            )}
-
             <DndContext
                 sensors={sensors}
                 onDragStart={onDragStart}
@@ -115,16 +103,26 @@ export default function DeliveryList() {
                                 <div
                                     onClick={() => {
                                         setToggleCard((prev) =>
-                                            prev === delivery ? null : delivery,
+                                            prev === delivery.uuid ? null : delivery.uuid,
                                         );
                                     }}
                                 >
-                                    (
-                                    <DeliveryCardShort
-                                        delivery={delivery}
-                                        actions={<DeliveryAction delivery={delivery} />}
-                                    />
-                                    )
+                                    {toggleCard === delivery.uuid ? (
+                                        <DeliveryCardFull
+                                            delivery={delivery}
+                                            actions={
+                                                <>
+                                                    <DeliveryAction delivery={delivery} />
+                                                    <CourierNote />
+                                                </>
+                                            }
+                                        />
+                                    ) : (
+                                        <DeliveryCardShort
+                                            delivery={delivery}
+                                            actions={<DeliveryAction delivery={delivery} />}
+                                        />
+                                    )}
                                 </div>
                             </DndSortable>
                         ))}
