@@ -1,12 +1,11 @@
-import DeliveryList from "@/components/DeliveryList";
 import usePrepareDocuments from "./hooks/usePrepareDocuments";
+import DeliveriesPage from "./components/DeliveriesPage";
 
 export default function App() {
     usePrepareDocuments();
     return (
         <main>
-            <h1>Доставки на сегодня</h1>
-            <DeliveryList />
+            <DeliveriesPage />
         </main>
     );
 }
