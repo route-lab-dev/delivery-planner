@@ -2,11 +2,10 @@ import { useState } from "react";
 import { DndContext, MouseSensor, TouchSensor, useSensor, useSensors } from "@dnd-kit/core";
 import type { DragEndEvent, DragStartEvent, UniqueIdentifier } from "@dnd-kit/core";
 import { arrayMove, SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
-import { DndDragOverlay } from "@/shared/ui";
 import styles from "./DeliveryList.module.css";
-import DeliveryAction from "./DeliveryAction";
+import { DeliveryAction } from "../DeliveryAction/DeliveryAction";
 import { CourierNote } from "@/features/courier-note";
-import { DndSortable } from "@/shared/ui";
+import { DndSortable, DndDragOverlay } from "@/shared/ui";
 import {
     meetings,
     type Delivery,
@@ -19,7 +18,7 @@ import {
     saveDeliveryPosition,
 } from "@/entities/delivery";
 
-export default function DeliveryList() {
+export function DeliveryList() {
     // Функцией, а не значением: закрепление срочных посчитается один раз, при первой отрисовке
     const [deliveries, setDeliveries] = useState<Delivery[]>(() => getStartDeliverys(meetings)); // ПОЛНЫЙ список
     const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null); // UniqueIdentifier = string | number

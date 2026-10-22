@@ -4,7 +4,7 @@ import { PrintDocumentsButton } from "@/features/print-documents";
 import type { Delivery } from "@/entities/delivery";
 
 type Props = { delivery: Delivery };
-export default function DeliveryAction({ delivery }: Props) {
+export function DeliveryAction({ delivery }: Props) {
     return (
         <>
             <DeliveryButtonCall />
