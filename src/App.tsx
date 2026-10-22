@@ -1,4 +1,4 @@
-import DeliveryList from "./components/DeliveryList";
+import DeliveryList from "@/components/DeliveryList";
 import usePrepareDocuments from "./hooks/usePrepareDocuments";
 
 export default function App() {
