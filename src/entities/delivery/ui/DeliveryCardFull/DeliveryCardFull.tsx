@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
-import type { Delivery } from "../types";
+import type { Delivery } from "../../model/types";
 
 type Props = { delivery: Delivery; actions: ReactNode };
 
-export default function DeliveryCardFull({ delivery, actions }: Props) {
+export function DeliveryCardFull({ delivery, actions }: Props) {
     const fullName = `${delivery.lastName} ${delivery.firstName} ${delivery.middleName}`;
 
     return (

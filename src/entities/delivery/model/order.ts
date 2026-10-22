@@ -1,4 +1,4 @@
-import type { Delivery } from "../types";
+import type { Delivery } from "./types";
 
 // Срочные наверх, остальные — в том порядке, в каком были (это не сортировка)
 export const pinUrgentDeliveries = (deliveries: Delivery[]): Delivery[] => {

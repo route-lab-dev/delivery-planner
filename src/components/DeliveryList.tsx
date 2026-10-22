@@ -2,17 +2,22 @@ import { useState } from "react";
 import { DndContext, MouseSensor, TouchSensor, useSensor, useSensors } from "@dnd-kit/core";
 import type { DragEndEvent, DragStartEvent, UniqueIdentifier } from "@dnd-kit/core";
 import { arrayMove, SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
-import { meetings } from "../meetings";
-import type { Delivery } from "../types";
-import DeliveryCardShort from "./DeliveryCardShort";
 import DndDragOverlay from "./DndDragOverlay";
-import { mergeVisibleOrder, pinUrgentDeliveries, saveDeliveryPosition } from "../utils/order";
-import { getStartDeliverys, setLocalUuids } from "../utils/storage";
-import DeliveryCardFull from "./DeliveryCardFull";
 import styles from "./DeliveryList.module.css";
 import DeliveryAction from "./DeliveryAction";
 import CourierNote from "./CourierNote";
-import { DndSortable } from "@/shared/ui/dnd/DndSortable";
+import { DndSortable } from "@/shared/ui";
+import {
+    meetings,
+    type Delivery,
+    DeliveryCardShort,
+    getStartDeliverys,
+    setLocalUuids,
+    DeliveryCardFull,
+    mergeVisibleOrder,
+    pinUrgentDeliveries,
+    saveDeliveryPosition,
+} from "@/entities/delivery";
 
 export default function DeliveryList() {
     // Функцией, а не значением: закрепление срочных посчитается один раз, при первой отрисовке

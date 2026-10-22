@@ -1,4 +1,4 @@
-import { meetings } from "../meetings";
+import { meetings } from "@/entities/delivery";
 import { PREPARE_BATCH_KEY, usePrepareDocumentsMutation } from "../app/documentsApi";
 import { useEffect, useRef } from "react";
 

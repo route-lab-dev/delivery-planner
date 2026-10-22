@@ -1,4 +1,4 @@
-import type { Delivery } from "../types";
+import type { Delivery } from "./types";
 import { pinUrgentDeliveries } from "./order";
 
 const LATEST_RECEIVED_DELIVERIES_DATE = "latestReceivedDeliveriesDate";

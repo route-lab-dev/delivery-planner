@@ -1,12 +1,12 @@
 import { DndIcon } from "@/shared/ui";
-import type { Delivery } from "../types";
+import type { Delivery } from "../../model/types";
 import styles from "./DeliveryCardShort.module.css";
-import DeliveryTags from "./DeliveryTags";
+import { DeliveryTags } from "../DeliveryTags/DeliveryTags";
 import type { ReactNode } from "react";
 
 type Props = { delivery: Delivery; actions?: ReactNode };
 
-export default function DeliveryCardShort({ delivery, actions }: Props) {
+export function DeliveryCardShort({ delivery, actions }: Props) {
     const fullName = `${delivery.lastName} ${delivery.firstName} ${delivery.middleName}`;
 
     return (
