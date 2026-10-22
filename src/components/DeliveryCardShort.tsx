@@ -54,7 +54,7 @@ export default function DeliveryCardShort({ delivery, actions }: Props) {
                     </div>
                 </div>
 
-                {actions ?? <div className={styles.actions}>{actions}</div>}
+                <div className={styles.actions}>{actions}</div>
             </article>
         </div>
     );

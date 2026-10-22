@@ -12,6 +12,7 @@ export default function DndIcon() {
             {...(sortableContext?.attributes || {})} // ... раскладывает объект на отдельные пропсы: role, tabIndex, aria-*
             {...(sortableContext?.listeners || {})} // onMouseDown, onTouchStart — их слушают сенсоры; || {} — если контекста нет (null)
             onContextMenu={(event) => event.preventDefault()} // долгое нажатие на телефоне (и правый клик) не открывает системное меню
+            onClick={(e) => e.stopPropagation()} // при нажатии на иконку не открываем fullCard
         >
             <svg width="10" height="16" viewBox="0 0 10 16" fill="currentColor" aria-hidden="true">
                 <circle cx="1.5" cy="1.5" r="1.5" />
