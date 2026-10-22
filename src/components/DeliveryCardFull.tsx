@@ -1,13 +1,10 @@
-import { useState } from "react";
+import type { ReactNode } from "react";
 import type { Delivery } from "../types";
 
-type Props = { delivery: Delivery };
+type Props = { delivery: Delivery; actions: ReactNode };
 
-export default function DeliveryCardFull({ delivery }: Props) {
+export default function DeliveryCardFull({ delivery, actions }: Props) {
     const fullName = `${delivery.lastName} ${delivery.firstName} ${delivery.middleName}`;
-
-    const [openNotes, setOpenNotes] = useState(false);
-    const [notes, setNotes] = useState("");
 
     return (
         <article>
@@ -18,20 +15,7 @@ export default function DeliveryCardFull({ delivery }: Props) {
             <p>{delivery.address}</p>
             <p>м. {delivery.metro}</p>
 
-            <button type="button">Позвонить</button>
-            <button type="button">SMS</button>
-            <button type="button">!911</button>
-            <button type="button" onClick={() => setOpenNotes(!openNotes)}>
-                Заметка
-            </button>
-
-            {openNotes && (
-                <textarea
-                    aria-label="Заметка"
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                />
-            )}
+            {actions}
 
             <h3>Вызовы</h3>
             {/* TODO: мини-карточка истории вызовов */}

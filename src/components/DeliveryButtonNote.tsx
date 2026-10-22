@@ -1,5 +1,10 @@
 import ActionButton from "./ActionButton";
 
-export default function DeliveryButtonNote() {
-    return <ActionButton variant="light">Заметка</ActionButton>;
+type Props = { onClick: () => void };
+export default function DeliveryButtonNote({ onClick }: Props) {
+    return (
+        <ActionButton variant="light" onClick={onClick}>
+            Заметка
+        </ActionButton>
+    );
 }
