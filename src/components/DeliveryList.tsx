@@ -11,6 +11,7 @@ import { mergeVisibleOrder, pinUrgentDeliveries, saveDeliveryPosition } from "..
 import { getStartDeliverys, setLocalUuids } from "../utils/storage";
 import DeliveryCardFull from "./DeliveryCardFull";
 import styles from "./DeliveryList.module.css";
+import DeliveryAction from "./DeliveryAction";
 
 export default function DeliveryList() {
     // Функцией, а не значением: закрепление срочных посчитается один раз, при первой отрисовке
@@ -108,7 +109,10 @@ export default function DeliveryList() {
                                     {toggleCard === delivery.uuid ? (
                                         <DeliveryCardFull delivery={delivery} />
                                     ) : (
-                                        <DeliveryCardShort delivery={delivery} />
+                                        <DeliveryCardShort
+                                            delivery={delivery}
+                                            actions={<DeliveryAction delivery={delivery} />}
+                                        />
                                     )}
                                 </div>
                             </DndSortable>
@@ -119,7 +123,12 @@ export default function DeliveryList() {
                 {/* Оверлей — ВНУТРИ DndContext, иначе он не знает, что тащат */}
 
                 <DndDragOverlay>
-                    {draggingDelivery && <DeliveryCardShort delivery={draggingDelivery} />}
+                    {draggingDelivery && (
+                        <DeliveryCardShort
+                            delivery={draggingDelivery}
+                            actions={<DeliveryAction delivery={draggingDelivery} />}
+                        />
+                    )}
                 </DndDragOverlay>
 
                 {/* {draggingDelivery && <DeliveryCardShort delivery={draggingDelivery} />} */}
