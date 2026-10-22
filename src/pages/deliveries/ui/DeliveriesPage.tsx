@@ -1,4 +1,4 @@
-import { DeliveryList } from "@/widgets/deliveryList";
+import { DeliveryList } from "@/widgets/delivery-list";
 
 export function DeliveriesPage() {
     return (
