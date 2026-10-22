@@ -3,7 +3,7 @@ import type { UniqueIdentifier } from "@dnd-kit/core";
 import { useMemo } from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { DndSortableContext } from "./DndSortableContext";
+import { DndSortableContext } from "@/shared/lib";
 
 type Props = { id: UniqueIdentifier; disabled?: boolean; children: ReactNode };
 

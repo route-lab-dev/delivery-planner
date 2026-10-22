@@ -1,5 +1,5 @@
+import { DndIcon } from "@/shared/ui";
 import type { Delivery } from "../types";
-import DndIcon from "./DndIcon";
 import styles from "./DeliveryCardShort.module.css";
 import DeliveryTags from "./DeliveryTags";
 import type { ReactNode } from "react";

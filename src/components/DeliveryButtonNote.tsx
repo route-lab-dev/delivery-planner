@@ -1,4 +1,4 @@
-import ActionButton from "./ActionButton";
+import { ActionButton } from "@/shared/ui";
 
 type Props = { onClick?: () => void };
 export default function DeliveryButtonNote({ onClick }: Props) {

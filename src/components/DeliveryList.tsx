@@ -5,7 +5,6 @@ import { arrayMove, SortableContext, verticalListSortingStrategy } from "@dnd-ki
 import { meetings } from "../meetings";
 import type { Delivery } from "../types";
 import DeliveryCardShort from "./DeliveryCardShort";
-import { DndSortable } from "./DndSortable";
 import DndDragOverlay from "./DndDragOverlay";
 import { mergeVisibleOrder, pinUrgentDeliveries, saveDeliveryPosition } from "../utils/order";
 import { getStartDeliverys, setLocalUuids } from "../utils/storage";
@@ -13,6 +12,7 @@ import DeliveryCardFull from "./DeliveryCardFull";
 import styles from "./DeliveryList.module.css";
 import DeliveryAction from "./DeliveryAction";
 import CourierNote from "./CourierNote";
+import { DndSortable } from "@/shared/ui/dnd/DndSortable";
 
 export default function DeliveryList() {
     // Функцией, а не значением: закрепление срочных посчитается один раз, при первой отрисовке

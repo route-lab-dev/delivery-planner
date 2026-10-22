@@ -1,4 +1,4 @@
-import { rootService } from "./rootService";
+import { rootService } from "../shared/api/rootService";
 
 export const PREPARE_BATCH_KEY = "prepareDocumentsBatch";
 // Текст ошибки сервера, когда документы по доставке уже выданы

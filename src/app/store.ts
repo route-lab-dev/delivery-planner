@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { rootService } from "./rootService";
+import { rootService } from "../shared/api/rootService";
 
 export const store = configureStore({
     reducer: {

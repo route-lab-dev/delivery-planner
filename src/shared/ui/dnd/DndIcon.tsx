@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import { DndSortableContext } from "./DndSortableContext";
-import styles from "./DndIcon.module.css";
 
-export default function DndIcon() {
+import styles from "./DndIcon.module.css";
+import { DndSortableContext } from "@/shared/lib/dnd/DndSortableContext";
+
+export function DndIcon() {
     const sortableContext = useContext(DndSortableContext);
 
     return (

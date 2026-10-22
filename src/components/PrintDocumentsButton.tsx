@@ -8,7 +8,7 @@ import {
     usePrepareDocumentsMutation,
 } from "../app/documentsApi";
 import { printDocument } from "../utils/printDocument";
-import ActionButton from "./ActionButton";
+import { ActionButton } from "@/shared/ui";
 
 type Props = { documentId: string };
 

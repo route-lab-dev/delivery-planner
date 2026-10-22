@@ -1,4 +1,4 @@
-import Tag from "./Tag";
+import { Tag } from "@/shared/ui";
 import styles from "./DeliveryTags.module.css";
 
 type Props = { urgency: boolean };

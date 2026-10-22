@@ -9,7 +9,7 @@ type Props = {
 };
 
 // Только вид кнопки; что она делает — решает компонент, который её рисует
-export default function ActionButton({ variant, children, onClick, disabled }: Props) {
+export function ActionButton({ variant, children, onClick, disabled }: Props) {
     return (
         <button
             type="button"
