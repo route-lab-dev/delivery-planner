@@ -6,8 +6,8 @@ import {
     getRestartKey,
     useGetDocumentStatusQuery,
     usePrepareDocumentsMutation,
-} from "../app/documentsApi";
-import { printDocument } from "../utils/printDocument";
+} from "../api/documentsApi";
+import { printDocument } from "../lib/printDocument";
 import { ActionButton } from "@/shared/ui";
 
 type Props = { documentId: string };
@@ -21,7 +21,7 @@ const BUTTON_TEXT = {
 
 const POLLING_INTERVAL = 3000;
 
-export default function PrintDocumentsButton({ documentId }: Props) {
+export function PrintDocumentsButton({ documentId }: Props) {
     // Триггер не берём: кнопка только читает результат общего запроса из ячейки по ключу
     const [, batch] = usePrepareDocumentsMutation({ fixedCacheKey: PREPARE_BATCH_KEY });
     const [restartDocument, restart] = usePrepareDocumentsMutation({

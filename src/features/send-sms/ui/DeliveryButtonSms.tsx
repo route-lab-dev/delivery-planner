@@ -1,5 +1,5 @@
 import { ActionButton } from "@/shared/ui";
 
-export default function DeliveryButtonSms() {
+export function DeliveryButtonSms() {
     return <ActionButton variant="outline">SMS</ActionButton>;
 }

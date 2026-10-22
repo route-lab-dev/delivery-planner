@@ -1,10 +1,10 @@
 import { meetings } from "@/entities/delivery";
-import { PREPARE_BATCH_KEY, usePrepareDocumentsMutation } from "../app/documentsApi";
 import { useEffect, useRef } from "react";
+import { PREPARE_BATCH_KEY, usePrepareDocumentsMutation } from "../api/documentsApi";
 
 const ids = meetings.map((meet) => meet.documentId).filter((id) => id !== undefined);
 
-export default function usePrepareDocuments() {
+export function usePrepareDocuments() {
     const sentRef = useRef(false);
     const [prepareDocuments] = usePrepareDocumentsMutation({
         fixedCacheKey: PREPARE_BATCH_KEY,

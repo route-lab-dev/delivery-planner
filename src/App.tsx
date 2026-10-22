@@ -1,4 +1,4 @@
-import usePrepareDocuments from "./hooks/usePrepareDocuments";
+import { usePrepareDocuments } from "@/features/print-documents";
 import DeliveriesPage from "./components/DeliveriesPage";
 
 export default function App() {

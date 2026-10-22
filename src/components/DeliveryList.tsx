@@ -2,10 +2,10 @@ import { useState } from "react";
 import { DndContext, MouseSensor, TouchSensor, useSensor, useSensors } from "@dnd-kit/core";
 import type { DragEndEvent, DragStartEvent, UniqueIdentifier } from "@dnd-kit/core";
 import { arrayMove, SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
-import DndDragOverlay from "./DndDragOverlay";
+import { DndDragOverlay } from "@/shared/ui";
 import styles from "./DeliveryList.module.css";
 import DeliveryAction from "./DeliveryAction";
-import CourierNote from "./CourierNote";
+import { CourierNote } from "@/features/courier-note";
 import { DndSortable } from "@/shared/ui";
 import {
     meetings,

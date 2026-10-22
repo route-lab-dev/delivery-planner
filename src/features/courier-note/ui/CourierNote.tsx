@@ -1,7 +1,7 @@
 import { useState } from "react";
-import DeliveryButtonNote from "./DeliveryButtonNote";
+import { DeliveryButtonNote } from "./DeliveryButtonNote";
 
-export default function CourierNote() {
+export function CourierNote() {
     const [openNotes, setOpenNotes] = useState(false);
     const [notes, setNotes] = useState("");
 
