@@ -9,7 +9,7 @@ import App from "./App.tsx";
 const enableMocking = async () => {
     if (!import.meta.env.DEV) return;
 
-    const { worker } = await import("@/shared/api");
+    const { worker } = await import("@/shared/api/mocks");
 
     await worker.start();
 };
