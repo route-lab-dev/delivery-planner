@@ -1,5 +1,5 @@
 import { usePrepareDocuments } from "@/features/print-documents";
-import DeliveriesPage from "./components/DeliveriesPage";
+import { DeliveriesPage } from "@/pages/deliveries";
 
 export default function App() {
     usePrepareDocuments();
