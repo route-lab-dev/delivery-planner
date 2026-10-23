@@ -1,23 +1,23 @@
 import type { ReactNode } from "react";
 import type { Delivery } from "../../model/types";
-
+import style from "./DeliveryCardFull.module.css";
 type Props = { delivery: Delivery; actions: ReactNode };
 
 export function DeliveryCardFull({ delivery, actions }: Props) {
     const fullName = `${delivery.lastName} ${delivery.firstName} ${delivery.middleName}`;
 
     return (
-        <article>
-            <h2>{fullName}</h2>
-            <p>
+        <article className={style.card}>
+            <h2 className={style.title}>{fullName}</h2>
+            <p className={style.time}>
                 {delivery.slotFrom}–{delivery.slotTo}
             </p>
-            <p>{delivery.address}</p>
-            <p>м. {delivery.metro}</p>
+            <p className={style.address}>{delivery.address}</p>
+            <p className={style.metro}>м. {delivery.metro}</p>
 
             {actions}
 
-            <h3>Вызовы</h3>
+            <h3 className={style.calls}>Вызовы</h3>
             {/* TODO: мини-карточка истории вызовов */}
         </article>
     );
