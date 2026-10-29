@@ -1,0 +1,32 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    color: var(--color-text);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-surface);
+    cursor: pointer;
+    user-select: none;
+}
+
+.count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%); /* половина кружка за краем */
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 9px;
+    font-size: 11px;
+    line-height: 18px;
+    text-align: center;
+    color: var(--color-surface);
+    background: var(--color-tag-urgent);
+}

@@ -3,3 +3,8 @@ export { Tag } from "./Tag/Tag";
 export { DndIcon } from "./dnd/DndIcon";
 export { DndSortable } from "./dnd/DndSortable";
 export { DndDragOverlay } from "./dnd/DndDragOverlay";
+export { MenuIcon } from "./icons/MenuIcon";
+export { MapIcon } from "./icons/MapIcon";
+export { PhoneIcon } from "./icons/PhoneIcon";
+export { ChatIcon } from "./icons/ChatIcon";
+export { IconButton } from "./IconButton/IconButton";
