@@ -1,0 +1,25 @@
+.button {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: var(--color-text); /* стрелка в чёрный */
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 4px 8px;
+    cursor: pointer;
+    white-space: nowrap; /* без переноса текста */
+}
+
+.dark {
+    color: var(--color-surface); /* стрелка в белый */
+    background: var(--color-text);
+}
+
+.arrow {
+    transition: transform 0.2s ease-in-out;
+}
+
+.up {
+    transform: rotate(180deg);
+}
