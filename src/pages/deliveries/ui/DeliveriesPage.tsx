@@ -1,9 +1,10 @@
 import { DeliveryList } from "@/widgets/delivery-list";
+import { NavBar } from "@/widgets/nav-bar";
 
 export function DeliveriesPage() {
     return (
         <>
-            <h1>Доставки на сегодня</h1>
+            <NavBar />
             <DeliveryList />
         </>
     );

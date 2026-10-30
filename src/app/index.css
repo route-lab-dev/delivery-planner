@@ -10,6 +10,8 @@
     --color-tag-urgent-bg: #fde2e2;
     --color-tag-default: #666;
     --color-tag-default-bg: #ececec;
+    --shadow-surface: 0 2px 8px rgb(15 23 42 / 6%);
+    --shadow-surface-hover: 0 4px 14px rgb(15 23 42 / 10%);
 }
 
 *,
