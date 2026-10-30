@@ -38,6 +38,7 @@ main {
     max-width: 480px;
 }
 
-button {
-    font: inherit; /* кнопки берут шрифт у родителя */
+button,
+input {
+    font: inherit;
 }
