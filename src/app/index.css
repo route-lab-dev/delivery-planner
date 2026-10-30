@@ -3,8 +3,13 @@
     --color-title: #1c2340;
     --color-muted: #888;
     --color-border: #ccc;
+    --color-border-subtle: #e5e7eb;
     --color-page: #f2f3f5;
     --color-surface: #fff;
+    --color-tag-urgent: #d92d20;
+    --color-tag-urgent-bg: #fde2e2;
+    --color-tag-default: #666;
+    --color-tag-default-bg: #ececec;
 }
 
 *,

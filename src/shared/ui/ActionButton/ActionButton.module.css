@@ -20,7 +20,7 @@
 }
 
 .light {
-    color: #999;
+    color: var(--color-muted);
     background: transparent;
     border-color: var(--color-border);
 }
