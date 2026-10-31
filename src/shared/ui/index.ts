@@ -7,5 +7,7 @@ export { MenuIcon } from "./icons/MenuIcon";
 export { MapIcon } from "./icons/MapIcon";
 export { PhoneIcon } from "./icons/PhoneIcon";
 export { ChatIcon } from "./icons/ChatIcon";
+export { SortIcon } from "./icons/SortIcon";
 export { SearchBar } from "./SearchBar/SearchBar";
 export { IconButton } from "./IconButton/IconButton";
+export { ActionPill } from "./ActionPill/ActionPill";
