@@ -94,6 +94,10 @@ export function DeliveryList() {
                 Скрыть завершённые
             </label>
 
+            {visibleDeliveries.length === 0 && (
+                <p className={styles.emptyList}>Нет активных доставок</p>
+            )}
+
             <DndContext
                 sensors={sensors}
                 onDragStart={onDragStart}
