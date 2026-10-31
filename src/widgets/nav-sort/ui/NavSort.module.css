@@ -1,0 +1,6 @@
+.navSort {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 8px;
+}
