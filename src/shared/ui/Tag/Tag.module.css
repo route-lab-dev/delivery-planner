@@ -13,11 +13,11 @@
 }
 
 .red {
-    color: #d92d20;
-    background: #fde2e2;
+    color: var(--color-tag-urgent);
+    background: var(--color-tag-urgent-bg);
 }
 
 .gray {
-    color: #666;
-    background: #ececec;
+    color: var(--color-tag-default);
+    background: var(--color-tag-default-bg);
 }

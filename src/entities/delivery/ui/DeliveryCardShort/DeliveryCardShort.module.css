@@ -4,19 +4,19 @@
     width: 100%;
     padding: 16px;
     gap: 12px;
-    background-color: #fff;
-    border: 1px solid #e5e7eb;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgb(15 23 42 / 6%);
-    color: #1f2937;
+    box-shadow: var(--shadow-surface);
+    color: var(--color-text);
     cursor: pointer; /* карточку открывают кликом, тащат — за ручку */
     transition:
         box-shadow 180ms ease,
         border-color 180ms ease;
 }
 .card:hover {
-    border: 1px solid #cbd5e1;
-    box-shadow: 0 4px 14px rgb(15 23 42 / 10%);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-surface-hover);
 }
 
 .header {
@@ -56,6 +56,9 @@
     height: 20px;
     margin: 0 2px;
     color: var(--color-text);
+}
+.clockHands {
+    stroke: var(--color-surface); /* стрелки — «вырез» в круге, цвета фона карточки */
 }
 .addressInfo {
     display: flex;

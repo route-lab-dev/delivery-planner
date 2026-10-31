@@ -23,7 +23,12 @@ export function DeliveryCardShort({ delivery, actions }: Props) {
                     <div className={styles.cardRow}>
                         <svg className={styles.icon} viewBox="0 0 20 20" aria-hidden="true">
                             <circle cx="10" cy="10" r="10" fill="currentColor" />
-                            <path d="M10 5v6l2.8 2.8" fill="none" stroke="#fff" strokeWidth="2" />
+                            <path
+                                className={styles.clockHands}
+                                d="M10 5v6l2.8 2.8"
+                                fill="none"
+                                strokeWidth="2"
+                            />
                         </svg>
 
                         <span className={styles.time}>
