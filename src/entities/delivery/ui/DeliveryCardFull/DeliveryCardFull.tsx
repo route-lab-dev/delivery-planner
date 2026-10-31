@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 import type { Delivery } from "../../model/types";
 import style from "./DeliveryCardFull.module.css";
-type Props = { delivery: Delivery; actions: ReactNode };
+type Props = { delivery: Delivery; actions: ReactNode; missCall: number };
 
-export function DeliveryCardFull({ delivery, actions }: Props) {
+export function DeliveryCardFull({ delivery, actions, missCall }: Props) {
     const fullName = `${delivery.lastName} ${delivery.firstName} ${delivery.middleName}`;
 
     return (
@@ -18,7 +18,7 @@ export function DeliveryCardFull({ delivery, actions }: Props) {
             {actions}
 
             <h3 className={style.calls}>Вызовы</h3>
-            {/* TODO: мини-карточка истории вызовов */}
+            {missCall === 0 ? null : <p className={style.missCall}>Недозвонов: {missCall}</p>}
         </article>
     );
 }
