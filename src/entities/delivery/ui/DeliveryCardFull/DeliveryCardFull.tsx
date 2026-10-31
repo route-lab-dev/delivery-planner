@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 import type { Delivery } from "../../model/types";
 import style from "./DeliveryCardFull.module.css";
+import { titleSwitch } from "../../model/titleSwitch";
 type Props = { delivery: Delivery; actions: ReactNode; missCall: number };
 
 export function DeliveryCardFull({ delivery, actions, missCall }: Props) {
-    const fullName = `${delivery.lastName} ${delivery.firstName} ${delivery.middleName}`;
-
+    const fullName = titleSwitch(delivery);
     return (
         <article className={style.card}>
             <h2 className={style.title}>{fullName}</h2>
