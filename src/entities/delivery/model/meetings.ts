@@ -4,6 +4,7 @@ export const meetings: Delivery[] = [
     {
         uuid: "db0ee2ef-37a2-4cf1-8371-bf9f45ee0e61",
         address: "г. Москва, ул. Осенняя, д. 12, кв. 45",
+        phone: "+79991234567",
         metro: "Крылатское",
         lastName: "Иванов (u)",
         firstName: "Иван",
@@ -17,9 +18,9 @@ export const meetings: Delivery[] = [
     {
         uuid: "2a25422c-cd1d-4989-9696-9c0c576dfb34",
         address: "г. Москва, Рублёвское ш., д. 28, кв. 7",
+        phone: "+79991231234",
         metro: "Молодёжная",
         lastName: "Смирнова",
-        firstName: "Анна",
         middleName: "Сергеевна",
         slotFrom: "10:00",
         slotTo: "12:00",
@@ -30,10 +31,8 @@ export const meetings: Delivery[] = [
     {
         uuid: "c5b0ba53-dd32-4eb7-8a5d-e259d68e9b58",
         address: "г. Москва, ул. Ярцевская, д. 19, кв. 112",
+        phone: "+79991231235",
         metro: "Молодёжная",
-        lastName: "Кузнецов (з)",
-        firstName: "Дмитрий",
-        middleName: "Олегович",
         slotFrom: "10:00",
         slotTo: "12:00",
         urgency: false,
@@ -43,6 +42,7 @@ export const meetings: Delivery[] = [
     {
         uuid: "9338e838-fa55-4d55-962e-a9e5d1f3e73d",
         address: "г. Москва, Кутузовский пр-т, д. 30, кв. 18",
+        phone: "+79991231236",
         metro: "Кутузовская",
         lastName: "Попова",
         firstName: "Елена",
@@ -56,6 +56,7 @@ export const meetings: Delivery[] = [
     {
         uuid: "6f9233b6-9863-418e-b1c6-8912efa0af61",
         address: "г. Москва, ул. Маршала Тимошенко, д. 4, кв. 61",
+        phone: "+79991231237",
         metro: "Кунцевская",
         lastName: "Соколов (з)",
         firstName: "Артём",
@@ -68,6 +69,7 @@ export const meetings: Delivery[] = [
     {
         uuid: "692b4cc7-14ab-4f1b-a0e7-23b631998524",
         address: "г. Москва, ул. Минская, д. 1Г, кв. 203",
+        phone: "+79991231238",
         metro: "Минская",
         lastName: "Морозова (u)",
         firstName: "Ольга",
@@ -80,6 +82,7 @@ export const meetings: Delivery[] = [
     {
         uuid: "dae73f06-f5e7-4112-ade6-55bc5ca5844d",
         address: "г. Москва, Мичуринский пр-т, д. 9, кв. 34",
+        phone: "+79991231239",
         metro: "Раменки",
         lastName: "Волков",
         firstName: "Никита",
@@ -92,6 +95,7 @@ export const meetings: Delivery[] = [
     {
         uuid: "a6081ead-6fdb-4546-86df-96dce91b4580",
         address: "г. Москва, ул. Василисы Кожиной, д. 14, кв. 9",
+        phone: "+79991231240",
         metro: "Багратионовская",
         lastName: "Лебедева",
         firstName: "Мария",
