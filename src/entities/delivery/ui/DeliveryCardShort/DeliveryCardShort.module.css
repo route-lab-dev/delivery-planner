@@ -29,7 +29,7 @@
 .name {
     overflow-wrap: anywhere;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--color-title);
     line-height: 24px;
     margin: 0;
@@ -56,9 +56,6 @@
     height: 20px;
     margin: 0 2px;
     color: var(--color-text);
-}
-.clockHands {
-    stroke: var(--color-surface); /* стрелки — «вырез» в круге, цвета фона карточки */
 }
 .addressInfo {
     display: flex;
