@@ -1,0 +1,111 @@
+/* Затемнение: закрывает весь экран и ловит клик мимо панели. */
+.overlay {
+    position: fixed; /* считается от окна, а не от родителя, поэтому шторку можно рисовать в NavSort */
+    inset: 0; /* то же, что top, right, bottom и left: 0 */
+    z-index: 2; /* выше шапки: у неё z-index 1 */
+    background: var(--color-overlay);
+    opacity: 0;
+    visibility: hidden; /* opacity: 0 только прячет: без этого невидимый слой ловил бы все клики */
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s; /* при закрытии слой исчезает только в конце, иначе не будет видно затухания */
+}
+
+.overlayOpen {
+    opacity: 1;
+    visibility: visible;
+}
+
+.panel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0; /* прижата к низу окна, высота — по содержимому */
+    z-index: 3; /* выше затемнения, иначе оно перекроет панель */
+    margin-inline: auto; /* при left и right: 0 auto центрирует панель, когда сработал max-width */
+    max-width: 480px; /* как у main: на широком экране панель не шире страницы */
+    padding: 8px 16px 16px;
+    border-radius: 16px 16px 0 0; /* скруглены только верхние углы */
+    background: var(--color-surface);
+    /* проценты — от своей высоты: панель ровно за краем при любой высоте */
+    transform: translateY(100%);
+    visibility: hidden; /* иначе Tab дойдёт до кнопок за краем экрана */
+    transition:
+        transform 0.25s ease,
+        visibility 0.25s; /* та же анимация, что у .arrow в таблетке: меняется класс, значение едет плавно */
+}
+
+.panelOpen {
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.handle {
+    width: 36px;
+    height: 4px;
+    margin: 0 auto 12px; /* auto по бокам — ручка по центру */
+    border-radius: 2px;
+    background: var(--color-border);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* заголовок слева, ✕ справа */
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--color-title);
+}
+
+.close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* длинный заголовок не сожмёт кнопку */
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: 50%; /* квадрат + 50% = круг */
+    color: var(--color-text);
+    background: var(--color-page);
+    cursor: pointer;
+}
+
+.closeIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.ul {
+    list-style: none;
+    padding-left: 0; /* убирает отступ слева, который остаётся после точек */
+    margin: 0;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    text-align: left;
+    width: 100%;
+    border: none;
+    padding: 0;
+    min-height: 48px;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.check {
+    width: 20px;
+    height: 20px;
+}
