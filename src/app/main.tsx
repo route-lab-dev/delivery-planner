@@ -3,7 +3,8 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import "./index.css";
 import { store } from "./store.ts";
-import App from "./App.tsx";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router/router.tsx";
 
 // Фейковый сервер — только при разработке
 const enableMocking = async () => {
@@ -18,7 +19,7 @@ enableMocking().then(() => {
     createRoot(document.getElementById("root")!).render(
         <StrictMode>
             <Provider store={store}>
-                <App />
+                <RouterProvider router={router} />
             </Provider>
         </StrictMode>,
     );
