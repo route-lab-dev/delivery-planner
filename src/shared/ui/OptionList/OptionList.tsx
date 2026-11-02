@@ -22,8 +22,8 @@ export function OptionList({ options, value, onChange }: Props) {
                             {label}
                             {count !== undefined && <span className={styles.count}>{count}</span>}
                         </span>
-
-                        {label === value && <Check className={styles.check} aria-hidden="true" />} {/* галочка только у выбранного статуса */}
+                        {label === value && <Check className={styles.check} aria-hidden="true" />}
+                        {/* галочка только у выбранного статуса */}
                     </button>
                 </li>
             ))}
