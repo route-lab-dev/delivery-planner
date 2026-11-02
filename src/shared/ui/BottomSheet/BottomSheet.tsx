@@ -1,32 +1,24 @@
-import { X, Check } from "lucide-react";
+import type { ReactNode } from "react";
+import { X } from "lucide-react";
 
 import styles from "./BottomSheet.module.css";
 
 type Props = {
     open: boolean;
-    active: string;
     title: string;
-    children: string[];
+    children: ReactNode; // шторка — только оболочка: внутри список, форма, что угодно
     onClose: () => void;
-    onChange: (child: string) => void;
 };
 
-export function BottomSheet({ open, active, title, children, onClose, onChange }: Props) {
-    // Затемнение и панель — соседи, а не родитель и ребёнок. Клик всплывает только к родителям,
-    // поэтому клик по панели не дойдёт до затемнения и не закроет шторку.
-    //
-    // Шторка всегда в DOM, open только меняет класс. С {open && …} анимации не было бы:
-    // при закрытии элемент удалился бы сразу, а при открытии появился бы уже на конечном месте.
+export function BottomSheet({ open, title, children, onClose }: Props) {
     return (
         <>
-            <div
-                className={`${styles.overlay} ${open ? styles.overlayOpen : ""}`}
+            <div // затемнение
+                className={`${styles.overlay} ${open ? styles.overlayOpen : ""}`} // регулируем видимость затемнения только классами
                 onClick={onClose}
             />
 
-            <div className={`${styles.panel} ${open ? styles.panelOpen : ""}`}>
-                <div className={styles.handle} /> // что это?
-
+            <div className={`${styles.panel} ${open ? styles.panelOpen : ""}`}> {/* панель с плавным открытием */}
                 <div className={styles.header}>
                     <p className={styles.title}>{title}</p>
 
@@ -40,26 +32,7 @@ export function BottomSheet({ open, active, title, children, onClose, onChange }
                     </button>
                 </div>
 
-                <ul className={styles.ul}>
-                    {children.map((child) => (
-                        <li key={child}>
-                            <button
-                                className={styles.button}
-                                type="button"
-                                onClick={() => {
-                                    onChange(child);
-                                    onClose();
-                                }}
-                            >
-                                <span>{child}</span>
-
-                                {child === active && (
-                                    <Check className={styles.check} aria-hidden="true" />
-                                )}
-                            </button>
-                        </li>
-                    ))}
-                </ul>
+                {children}
             </div>
         </>
     );

@@ -12,3 +12,4 @@ export { SearchBar } from "./SearchBar/SearchBar";
 export { IconButton } from "./IconButton/IconButton";
 export { ActionPill } from "./ActionPill/ActionPill";
 export { BottomSheet } from "./BottomSheet/BottomSheet";
+export { OptionList } from "./OptionList/OptionList";
