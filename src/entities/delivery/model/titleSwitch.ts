@@ -6,5 +6,5 @@ export const titleSwitch = (delivery: Delivery) => {
         return `${delivery.lastName} ${delivery.firstName} ${delivery.middleName}`;
     }
 
-    return `+7(9**)***${delivery.phone.slice(-4, -2)}-${delivery.phone.slice(-2)}`;
+    return `+7(9**)***-${delivery.phone.slice(-4, -2)}-${delivery.phone.slice(-2)}`;
 };

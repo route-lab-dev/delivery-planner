@@ -1,0 +1,33 @@
+.list {
+    list-style: none;
+    padding-left: 0; /* убирает отступ слева, который остаётся после точек */
+    margin: 0;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    text-align: left;
+    width: 100%;
+    border: none;
+    padding: 0;
+    min-height: 48px;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.count {
+    display: block; /* span с новой строки: количество под названием */
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--color-muted);
+}
+
+.check {
+    flex-shrink: 0; /* длинное название не сожмёт галочку */
+    width: 20px;
+    height: 20px;
+}

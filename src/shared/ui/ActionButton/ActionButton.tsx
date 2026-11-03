@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import styles from "./ActionButton.module.css";
 
 type Props = {
-    variant: "dark" | "outline" | "light";
+    variant: "dark" | "outline" | "light" | "block";
     children: ReactNode;
     onClick?: () => void;
     disabled?: boolean;
