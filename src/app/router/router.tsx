@@ -1,9 +1,10 @@
 import { DeliveriesPage } from "@/pages/deliveries";
 import { createBrowserRouter } from "react-router-dom";
+import { RootLayout } from "../layouts";
 
 export const router = createBrowserRouter([
     {
-        path: "/",
-        element: <DeliveriesPage />,
+        element: <RootLayout />,
+        children: [{ path: "/", element: <DeliveriesPage /> }],
     },
 ]);
