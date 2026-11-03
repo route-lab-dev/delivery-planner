@@ -37,16 +37,16 @@
 
 .meta {
     align-items: flex-start;
-    gap: 8px;
+    gap: 20px;
+    margin: 16px 0;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* между строками */
 }
 
 .cardRow {
     display: flex;
     align-items: center;
-    gap: 12px; /* иконка ↔ текст */
+    gap: 12px;
     font-size: 16px;
     line-height: 20px;
 }
@@ -57,10 +57,7 @@
     margin: 0 2px;
     color: var(--color-text);
 }
-.addressInfo {
-    display: flex;
-    flex-direction: column;
-}
+
 .address {
     color: var(--color-text);
     overflow-wrap: anywhere;
@@ -74,7 +71,7 @@
 }
 
 .metro {
-    display: block; /* span с новой строки */
+    display: block;
     margin-top: 4px;
     font-size: 14px;
     line-height: 18px;
