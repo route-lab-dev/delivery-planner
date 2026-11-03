@@ -25,6 +25,17 @@
     border-color: var(--color-border);
 }
 
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    background: transparent;
+    border-color: var(--color-text);
+    height: 42px;
+    font-size: 18px;
+}
+
 .button:disabled {
     opacity: 0.4;
     cursor: not-allowed;
