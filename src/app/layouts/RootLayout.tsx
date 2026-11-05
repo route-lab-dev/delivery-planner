@@ -1,11 +1,11 @@
+import { Outlet } from "react-router-dom";
 import { usePrepareDocuments } from "@/features/print-documents";
-import { DeliveriesPage } from "@/pages/deliveries";
 
-export default function App() {
+export function RootLayout() {
     usePrepareDocuments();
     return (
         <main>
-            <DeliveriesPage />
+            <Outlet />
         </main>
     );
 }
