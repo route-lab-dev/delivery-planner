@@ -7,4 +7,5 @@ export const selectMissCallCounts = createSelector(selectMissCalls, (items) => {
     for (const { deliveryUuid } of items) {
         counts[deliveryUuid] = (counts[deliveryUuid] ?? 0) + 1;
     }
+    return counts;
 });
