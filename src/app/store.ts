@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { rootService } from "@/shared/api";
-import { missCallSlice } from "@/features/miss-call/model/missCallSlice";
+import { missCallSlice } from "@/features/miss-call";
 
 export const store = configureStore({
     reducer: {
