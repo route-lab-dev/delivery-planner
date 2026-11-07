@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { rootService } from "@/shared/api";
+import { missCallSlice } from "@/features/miss-call";
 
 export const store = configureStore({
     reducer: {
         [rootService.reducerPath]: rootService.reducer,
+        missCall: missCallSlice.reducer,
     },
 
     middleware: (getDefault) => getDefault().concat(rootService.middleware),
