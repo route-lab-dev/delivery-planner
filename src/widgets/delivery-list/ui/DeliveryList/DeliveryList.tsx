@@ -17,6 +17,8 @@ import {
     pinUrgentDeliveries,
     saveDeliveryPosition,
 } from "@/entities/delivery";
+import { useAppSelector } from "@/app/hooks";
+import { selectMissCallCounts } from "@/features/miss-call";
 
 export function DeliveryList() {
     // Функцией, а не значением: закрепление срочных посчитается один раз, при первой отрисовке
@@ -26,8 +28,7 @@ export function DeliveryList() {
     const [toggleCard, setToggleCard] = useState<Delivery["uuid"] | null>(null); // переключаетель с длинного на кородкий каждого кард
     // Пока «сервер» не ответил — перетаскивать нельзя: иначе откат упавшего запроса сотрёт следующее перетаскивание
     const [isSaving, setIsSaving] = useState(false);
-    const [missCalls, setMissCalls] = useState<Record<Delivery["uuid"], number>>({});
-
+    const counts = useAppSelector(selectMissCallCounts);
     const visibleDeliveries = hideCompleted
         ? deliveries.filter((del) => del.status === "active")
         : deliveries;
@@ -119,19 +120,10 @@ export function DeliveryList() {
                                     {toggleCard === delivery.uuid ? (
                                         <DeliveryCardFull
                                             delivery={delivery}
-                                            missCall={missCalls[delivery.uuid]}
+                                            missCall={counts[delivery.uuid] ?? 0}
                                             actions={
                                                 <>
-                                                    <DeliveryAction
-                                                        delivery={delivery}
-                                                        onClick={() =>
-                                                            setMissCalls((prev) => ({
-                                                                ...prev,
-                                                                [delivery.uuid]:
-                                                                    (prev[delivery.uuid] || 0) + 1,
-                                                            }))
-                                                        }
-                                                    />
+                                                    <DeliveryAction delivery={delivery} />
                                                     <CourierNote />
                                                 </>
                                             }
@@ -139,18 +131,7 @@ export function DeliveryList() {
                                     ) : (
                                         <DeliveryCardShort
                                             delivery={delivery}
-                                            actions={
-                                                <DeliveryAction
-                                                    delivery={delivery}
-                                                    onClick={() =>
-                                                        setMissCalls((prev) => ({
-                                                            ...prev,
-                                                            [delivery.uuid]:
-                                                                (prev[delivery.uuid] || 0) + 1,
-                                                        }))
-                                                    }
-                                                />
-                                            }
+                                            actions={<DeliveryAction delivery={delivery} />}
                                         />
                                     )}
                                 </div>
