@@ -6,7 +6,7 @@ const dateTimeFormat = new Intl.DateTimeFormat("ru-RU", {
     minute: "2-digit",
 });
 
-export function formatCallTimes(iso: string, now: Date = new Date()): string {
+export function formatCallTime(iso: string, now: Date = new Date()): string {
     const date = new Date(iso);
     if (Number.isNaN(date.getTime())) return "";
 
