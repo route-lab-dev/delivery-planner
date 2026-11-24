@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { MissCall } from "./types";
 import type { Delivery } from "@/entities/delivery";
@@ -13,7 +13,7 @@ export const missCallSlice = createSlice({
         missCallAdded: {
             prepare: (deliveryUuid: Delivery["uuid"]) => ({
                 payload: {
-                    id: crypto.randomUUID(),
+                    id: nanoid(),
                     deliveryUuid,
                     calledAt: new Date().toISOString(),
                 } satisfies MissCall,

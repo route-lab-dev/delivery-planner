@@ -4,13 +4,13 @@ import { PrintDocumentsButton } from "@/features/print-documents";
 import type { Delivery } from "@/entities/delivery";
 import { DeliveryMissCall } from "@/features/miss-call";
 
-type Props = { delivery: Delivery; onClick?: () => void };
-export function DeliveryAction({ delivery, onClick }: Props) {
+type Props = { delivery: Delivery };
+export function DeliveryAction({ delivery }: Props) {
     return (
         <>
             <DeliveryButtonCall />
             <DeliveryButtonSms />
-            <DeliveryMissCall onClick={onClick} />
+            <DeliveryMissCall deliveryUuid={delivery.uuid} />
             {delivery.documentId && <PrintDocumentsButton documentId={delivery.documentId} />}
         </>
     );
